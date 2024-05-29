@@ -3,6 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import api from "./routes/index.js";
+import path from "path";
 
 const app = express();
 
@@ -20,7 +21,12 @@ mongoose
   .then(() => console.log("connected to DB"))
   .catch((err) => console.log(err));
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
+
+app.use(express.json());
+const __dirname = path.dirname("")
+const buildpath = path.join(__dirname,"../medcare/build")
+app.use(express.static(buildpath));
 
 app.use(cors());
 
