@@ -8,10 +8,9 @@ import path from "path";
 const app = express();
 
 // const { USER_NAME, PASSWORD } = process.env;
-// const uri = `mongodb://${USER_NAME}:${PASSWORD}@cluster0-shard-00-00.kmfwq.mongodb.net:27017,cluster0-shard-00-01.kmfwq.mongodb.net:27017,cluster0-shard-00-02.kmfwq.mongodb.net:27017/MedCare?ssl=true&replicaSet=atlas-a9v4hk-shard-0&authSource=admin&retryWrites=true&w=majority`;
-
+const uri = "mongodb+srv://debayanmondal2001:Debamongo1@medical.hfpyths.mongodb.net/MedCare?retryWrites=true&w=majority&appName=Medical";
 //use the following uri when running local MongoDB server
-const uri = "mongodb://localhost:27017/MedCare";
+// const uri = "mongodb://localhost:27017/MedCare";
 
 mongoose
   .connect(uri, {
