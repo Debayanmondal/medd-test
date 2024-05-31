@@ -23,7 +23,11 @@ pipeline {
         stage('Install Frontend Dependencies') {
             steps {
                 dir("${env.FRONTEND_DIR}") {
-                    sh 'npm install'
+                    sh """
+                    curl -fsSL https://rpm.nodesource.com/setup_14.x | sudo bash -
+                    sudo yum install -y nodejs
+                    npm install
+                    """
                 }
             }
         }
