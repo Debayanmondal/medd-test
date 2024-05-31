@@ -26,7 +26,7 @@ pipeline {
                     sh """
                     curl -fsSL https://rpm.nodesource.com/setup_14.x | sudo bash -
                     sudo yum install -y nodejs
-                    npm install
+                    npm i
                     """
                 }
             }
@@ -35,7 +35,7 @@ pipeline {
         stage('Install Backend Dependencies') {
             steps {
                 dir("${env.BACKEND_DIR}") {
-                    sh 'npm install && sudo npm i pm2 -g'
+                    sh 'npm i && sudo npm i pm2 -g'
                 }
             }
         }
