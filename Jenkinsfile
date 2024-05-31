@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
            steps {
                 script {
-                    git url: 'https://github.com/Debayanmondal/medd-test.git'
+                    git branch: 'main', url: 'https://github.com/Debayanmondal/medd-test.git', credentialsId: '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'
                     def workspaceDir = env.WORKSPACE
                     sh """
                         git config --global --add safe.directory $workspaceDir
