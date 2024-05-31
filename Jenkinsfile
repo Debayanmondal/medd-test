@@ -9,11 +9,15 @@ pipeline {
     stages {
         stage('Checkout') {
            steps {
-                git url: 'https://github.com/Debayanmondal/medd-test.git'
-                sh '''
-                    git config --global --add safe.directory /home/devopsadmin
-                    cd medd-test
-                '''
+                script {
+                    git url: 'https://github.com/Debayanmondal/medd-test.git'
+                    def workspaceDir = env.WORKSPACE
+                    sh """
+                        git config --global --add safe.directory $workspaceDir
+                        cd $workspaceDir
+                        git init
+                    """
+                }
             }
         }
 
