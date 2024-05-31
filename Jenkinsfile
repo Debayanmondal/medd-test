@@ -9,8 +9,10 @@ pipeline {
     stages {
         stage('Checkout') {
            steps {
-                script {
-                    git branch: 'main', url: 'https://github.com/Debayanmondal/medd-test.git', credentialsId: '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'
+               script {
+                    withCredentials([string(credentialsId: 'Github_Secret', variable: 'GITHUB_SECRET')]) {
+                        git branch: 'main', url: 'https://github.com/Debayanmondal/medd-test.git', credentialsId: ''
+                    }
                     def workspaceDir = env.WORKSPACE
                     sh """
                         git config --global --add safe.directory $workspaceDir
