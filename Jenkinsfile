@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Debayanmondal/medd-test.git'
+                git clone'https://github.com/Debayanmondal/medd-test.git'
+                sh 'cd medtest'
             }
         }
 
