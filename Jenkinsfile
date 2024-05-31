@@ -15,7 +15,6 @@ pipeline {
                     sh """
                         git config --global --add safe.directory $workspaceDir
                         cd $workspaceDir
-                        git init
                     """
                 }
             }
