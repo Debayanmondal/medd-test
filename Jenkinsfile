@@ -9,9 +9,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git clone 'https://github.com/Debayanmondal/medd-test.git'
-                sh 'cd medtest'
-                git init
+                git url: 'https://github.com/Debayanmondal/medd-test.git'
+                sh '''
+                    cd medtest
+                    git init
+                '''
             }
         }
 
