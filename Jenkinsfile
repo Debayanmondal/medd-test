@@ -8,11 +8,11 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
+           steps {
                 git url: 'https://github.com/Debayanmondal/medd-test.git'
                 sh '''
-                    cd medtest
-                    git init
+                    git config --global --add safe.directory /home/devopsadmin
+                    cd medd-test
                 '''
             }
         }
