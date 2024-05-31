@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        FRONTEND_DIR = '/medcare'
-        BACKEND_DIR = '/medcare-server'
+        FRONTEND_DIR = 'medcare'
+        BACKEND_DIR = 'medcare-server'
     }
 
     stages {
