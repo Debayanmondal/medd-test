@@ -46,7 +46,7 @@ pipeline {
         stage('Start Backend') {
             steps {
                 dir("${env.BACKEND_DIR}") {
-                    sh 'pm2 start app.js'
+                    sh 'pm2 start app.js -f'
                 }
             }
         }
