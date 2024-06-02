@@ -11,6 +11,7 @@ pipeline {
            steps {
                script {
                     withCredentials([string(credentialsId: 'Github_Secret', variable: 'GITHUB_SECRET')]) {
+                        cleanWs()
                         git branch: 'main', url: 'https://github.com/Debayanmondal/medd-test.git', credentialsId: ''
                     }
                     def workspaceDir = env.WORKSPACE
@@ -53,7 +54,6 @@ pipeline {
 
     post {
         always {
-           // cleanWs()
             echo "Pipeline End"
         }
     }
