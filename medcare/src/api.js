@@ -1,7 +1,7 @@
 import axios from "axios";
 const axiosInstance = axios.create();
 
-const serverUrl = process.env.REACT_APP_SERVER || "http://65.2.150.215:5000";
+const serverUrl = "http://65.2.150.215:5000";
 const baseUrl = `${serverUrl}/api`;
 
 axios.interceptors.request.use(
