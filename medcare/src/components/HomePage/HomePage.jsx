@@ -12,9 +12,9 @@ export default function HomePage() {
       <div className={styles.leftColumn}>
         <p className={styles.heading}>
           <span className={styles.p1}>Medi</span>{" "}
-          <span className={styles.p2}>Bud</span>
+          <span className={styles.p2}>Care Plus</span>
         </p>
-        <p className={styles.subHeading}>Hospital Management System</p>
+        <p className={styles.subHeading}>Healthcare Management System</p>
         <div className={styles.authBtns}>
           <Link className={styles.linkBtn} to="/signup">
             <Button
